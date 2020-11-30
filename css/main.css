@@ -1,0 +1,237 @@
+body {
+    margin: 0%;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.title {
+    font-size: 80px;
+    margin: 0% auto;
+}
+
+.add-book-button {
+    margin: 20px auto;
+    height: fit-content;
+    padding: 20px;
+    font-size: 30px;
+    border: solid 2px black;
+    border-radius: 20px;
+    outline: none;
+}
+
+.add-book-button:hover {
+    background-color: rgba(113, 226, 90, 0.514);
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: left;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    font-family: monospace;
+    font-size: 20px;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.card-item {
+    padding: 10px;
+    min-width: 25%;
+    border-radius: 10px;
+    border: solid 2px black;
+    background-color: white;
+    box-shadow: 10px 10px 15px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin: 0 15px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.card-item:hover {
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.fa {
+    font-size: 100px;
+}
+
+.form-container {
+    width: 400px;
+    padding: 0 40px 30px 40px;
+    z-index: 10;
+    position: fixed;
+    color: white;
+    border-radius: 10px;
+    top: 20px;
+    left: 47%;
+    background-color: burlywood;
+    margin-left: -200px;
+    text-align: center;
+}
+
+.form-container h3 {
+    font-size: 30px;
+}
+
+
+.form-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    text-align: left;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    background-color: green;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: #45a049;
+}
+
+.form-cancel {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    background-color: rgb(163, 8, 8);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-cancel:hover {
+    background-color: rgb(230, 26, 26);
+}
+
+.form-delete {
+    width: 90%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    background-color: rgb(163, 8, 8);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-delete:hover {
+    background-color: rgb(230, 26, 26);
+}
+
+
+/* Slider begin */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+/* Slider end */
+
+/* Media queries */
+
+@media screen and (max-width: 1350px) and (min-width: 1000px) {
+    .card-container {
+        flex-wrap: wrap;
+    }
+    .card-item {
+        flex: 0.5;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 40px;
+    }
+    .card-container {
+        flex-wrap: wrap;
+        margin: 0%;
+        justify-content: center;
+    }
+    .card-item {
+        flex: 1;
+    }
+    
+    .form-container {
+        width: 200px;
+        left: 40%;
+        margin-left: -100px;
+    }
+}
+
