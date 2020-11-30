@@ -8,9 +8,7 @@ function Book(title, author, pages) {
     this.Pages = pages
 }
 
-
 initializePageElements()
-
 
 function initializePageElements(){
     // Create container div
@@ -40,7 +38,6 @@ function initializePageElements(){
     addElementsToPage(container, pageTitle, addNewBookButton)
 
 }
-
 
 function createForm(){
     // Create and initialize form
@@ -124,7 +121,6 @@ function createForm(){
 
     document.body.appendChild(inputForm)
 }
-
 
 function addElementsToPage(container, pageTitle, addBookButton){
     // Add elements to container
