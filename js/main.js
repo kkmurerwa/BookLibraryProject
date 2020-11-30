@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary = []
 
 const cardContainer = document.createElement("div")
 
@@ -37,6 +37,30 @@ function initializePageElements(){
     // Call function to append all elements to page
     addElementsToPage(container, pageTitle, addNewBookButton)
 
+}
+
+function addElementsToPage(container, pageTitle, addBookButton){
+    // Add elements to container
+    container.appendChild(pageTitle)
+    container.appendChild(addBookButton)
+    container.appendChild(cardContainer)
+
+    document.body.appendChild(container)
+
+    // Retrieve library from local storage
+    if (storageAvailable('localStorage')) {
+        // Retrieve stored books
+        myLibrary = JSON.parse(localStorage.getItem("books"))
+        if (myLibrary != null){
+            console.log("Storage is not empty")
+            for (let i = 0; i < myLibrary.length; i ++){
+                addNewBookToDOM(myLibrary[i])
+            }
+        } else {
+            console.log("Storage is empty")
+            myLibrary = []
+        }
+    }    
 }
 
 function createForm(){
@@ -122,28 +146,6 @@ function createForm(){
     document.body.appendChild(inputForm)
 }
 
-function addElementsToPage(container, pageTitle, addBookButton){
-    // Add elements to container
-    container.appendChild(pageTitle)
-    container.appendChild(addBookButton)
-    container.appendChild(cardContainer)
-
-    document.body.appendChild(container)
-
-    // Retrieve library from local storage
-    if (storageAvailable('localStorage')) {
-        // Retrieve stored books
-        myLibrary = JSON.parse(localStorage.getItem("books"))
-        if (myLibrary != null){
-            console.log("Storage is not empty")
-            for (let i = 0; i < myLibrary.length; i ++){
-                addNewBookToDOM(myLibrary[i])
-            }
-        } else {
-            console.log("Storage is empty")
-        }
-    }    
-}
 
 function addBookToLibrary(bookTitle, bookAuthor, bookPages) {
     console.log("Adding books to library...");
